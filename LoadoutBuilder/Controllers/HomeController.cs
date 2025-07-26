@@ -1,8 +1,8 @@
-using LoadoutBuilder.Models;
+using LoadoutBuilder.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace LoadoutBuilder.Controllers
+namespace LoadoutBuilder.Web.Controllers
 {
     public class HomeController : Controller
     {

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadoutBuilder", "LoadoutBuilder\LoadoutBuilder.csproj", "{0DFA20F0-6CA6-469B-AD7A-55F8B6A4DB30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadoutBuilder.Web", "LoadoutBuilder\LoadoutBuilder.Web.csproj", "{0DFA20F0-6CA6-469B-AD7A-55F8B6A4DB30}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadoutBuilder.Data", "LoadoutBuilder.Data\LoadoutBuilder.Data.csproj", "{911FA79F-D205-44BA-A6C0-509CC4CB494E}"
 EndProject

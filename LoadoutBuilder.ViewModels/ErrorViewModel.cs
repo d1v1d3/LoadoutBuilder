@@ -1,4 +1,4 @@
-namespace LoadoutBuilder.Models
+namespace LoadoutBuilder.ViewModels
 {
     public class ErrorViewModel
     {
