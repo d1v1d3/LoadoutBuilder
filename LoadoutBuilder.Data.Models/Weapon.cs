@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LoadoutBuilder.Common;
 
 namespace LoadoutBuilder.Data.Models
 {
@@ -13,7 +14,9 @@ namespace LoadoutBuilder.Data.Models
         [Key]
         public int Id { get; set; }
         [Required]
+        [StringLength(ValidationConstants.Weapon.NameMaxLength)]
         public string Name { get; set; }
+        [StringLength(ValidationConstants.Weapon.DescriptionMaxLength)]
         public string? Description { get; set; }
         public int CotegoryId { get; set; }
         [ForeignKey(nameof(CotegoryId))]

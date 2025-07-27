@@ -19,7 +19,7 @@ namespace LoadoutBuilder.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<WeaponSlot>()
-                .HasKey(wc => new { wc.WeaponId, wc.CamoId, wc.SightId });
+                .HasKey(ws => new { ws.SlotNumber, ws.LoadoutId });
 
             modelBuilder.Entity<SightCategory>()
                 .HasKey(sc => new {sc.SightId, sc.CotegoryId});

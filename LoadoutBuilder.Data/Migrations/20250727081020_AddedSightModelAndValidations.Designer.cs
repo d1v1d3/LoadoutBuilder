@@ -4,6 +4,7 @@ using LoadoutBuilder.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LoadoutBuilder.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250727081020_AddedSightModelAndValidations")]
+    partial class AddedSightModelAndValidations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -146,10 +149,7 @@ namespace LoadoutBuilder.Data.Migrations
 
             modelBuilder.Entity("LoadoutBuilder.Data.Models.WeaponSlot", b =>
                 {
-                    b.Property<int>("SlotNumber")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LoadoutId")
+                    b.Property<int>("WeaponId")
                         .HasColumnType("int");
 
                     b.Property<int>("CamoId")
@@ -158,18 +158,16 @@ namespace LoadoutBuilder.Data.Migrations
                     b.Property<int>("SightId")
                         .HasColumnType("int");
 
-                    b.Property<int>("WeaponId")
+                    b.Property<int?>("LoadoutId")
                         .HasColumnType("int");
 
-                    b.HasKey("SlotNumber", "LoadoutId");
+                    b.HasKey("WeaponId", "CamoId", "SightId");
 
                     b.HasIndex("CamoId");
 
                     b.HasIndex("LoadoutId");
 
                     b.HasIndex("SightId");
-
-                    b.HasIndex("WeaponId");
 
                     b.ToTable("WeaponSlots");
                 });
@@ -212,11 +210,9 @@ namespace LoadoutBuilder.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LoadoutBuilder.Data.Models.Loadout", "Loadout")
+                    b.HasOne("LoadoutBuilder.Data.Models.Loadout", null)
                         .WithMany("WeaponSlots")
-                        .HasForeignKey("LoadoutId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("LoadoutId");
 
                     b.HasOne("LoadoutBuilder.Data.Models.Sight", "Sight")
                         .WithMany("WeaponSlots")
@@ -231,8 +227,6 @@ namespace LoadoutBuilder.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Camo");
-
-                    b.Navigation("Loadout");
 
                     b.Navigation("Sight");
 

@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LoadoutBuilder.Common\LoadoutBuilder.Common.csproj" />
+  </ItemGroup>
+
 </Project>
