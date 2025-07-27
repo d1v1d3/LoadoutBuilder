@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LoadoutBuilder.Data.Models
 {
-    public class WeaponCamo
+    public class WeaponSlot
     {
         public int WeaponId { get; set; }
         [ForeignKey(nameof(WeaponId))]
@@ -15,5 +15,8 @@ namespace LoadoutBuilder.Data.Models
         public int CamoId { get; set; }
         [ForeignKey(nameof(CamoId))]
         public Camo Camo { get; set; }
+        public int SightId { get; set; }
+        [ForeignKey(nameof(SightId))]
+        public Sight Sight { get; set; }
     }
 }

@@ -39,7 +39,7 @@ namespace LoadoutBuilder.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Camos");
+                    b.ToTable("Camos", (string)null);
                 });
 
             modelBuilder.Entity("LoadoutBuilder.Data.Models.Category", b =>
@@ -56,7 +56,7 @@ namespace LoadoutBuilder.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("LoadoutBuilder.Data.Models.Loadout", b =>
@@ -69,7 +69,7 @@ namespace LoadoutBuilder.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Loadouts");
+                    b.ToTable("Loadouts", (string)null);
                 });
 
             modelBuilder.Entity("LoadoutBuilder.Data.Models.Weapon", b =>
@@ -94,7 +94,7 @@ namespace LoadoutBuilder.Data.Migrations
 
                     b.HasIndex("CotegoryId");
 
-                    b.ToTable("Weapons");
+                    b.ToTable("Weapons", (string)null);
                 });
 
             modelBuilder.Entity("LoadoutBuilder.Data.Models.WeaponCamo", b =>
@@ -114,7 +114,7 @@ namespace LoadoutBuilder.Data.Migrations
 
                     b.HasIndex("LoadoutId");
 
-                    b.ToTable("WeaponCamos");
+                    b.ToTable("WeaponCamos", (string)null);
                 });
 
             modelBuilder.Entity("LoadoutBuilder.Data.Models.Weapon", b =>

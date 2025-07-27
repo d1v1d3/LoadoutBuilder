@@ -18,13 +18,16 @@ namespace LoadoutBuilder.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<WeaponCamo>()
-                .HasKey(wc => new { wc.WeaponId, wc.CamoId });
+            modelBuilder.Entity<WeaponSlot>()
+                .HasKey(wc => new { wc.WeaponId, wc.CamoId, wc.SightId });
+
+            modelBuilder.Entity<SightCategory>()
+                .HasKey(sc => new {sc.SightId, sc.CotegoryId});
         }
         public DbSet<Loadout> Loadouts { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Weapon> Weapons { get; set; }
         public DbSet<Camo> Camos { get; set; }
-        public DbSet<WeaponCamo> WeaponCamos { get; set; }
+        public DbSet<WeaponSlot> WeaponSlots { get; set; }
     }
 }

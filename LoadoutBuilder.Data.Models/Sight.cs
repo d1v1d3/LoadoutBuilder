@@ -1,23 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LoadoutBuilder.Data.Models
 {
-    public class Weapon
+    public class Sight
     {
         [Key]
         public int Id { get; set; }
-        [Required]
         public string Name { get; set; }
-        public string? Description { get; set; }
-        public int CotegoryId { get; set; }
-        [ForeignKey(nameof(CotegoryId))]
-        public virtual Category Category { get; set; }
+        public Range Range { get; set; }
+        public ICollection<SightCategory> SightCategories { get; set; }
         public virtual ICollection<WeaponSlot> WeaponSlots { get; set; } = new HashSet<WeaponSlot>();
+    }
+    public enum Range
+    {
+        Short,
+        Medium,
+        Long
     }
 }
