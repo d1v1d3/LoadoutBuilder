@@ -3,21 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadoutBuilder.Web", "LoadoutBuilder\LoadoutBuilder.Web.csproj", "{0DFA20F0-6CA6-469B-AD7A-55F8B6A4DB30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadoutBuilder.Web", "LoadoutBuilder\LoadoutBuilder.Web.csproj", "{0DFA20F0-6CA6-469B-AD7A-55F8B6A4DB30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadoutBuilder.Data", "LoadoutBuilder.Data\LoadoutBuilder.Data.csproj", "{911FA79F-D205-44BA-A6C0-509CC4CB494E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadoutBuilder.Data", "LoadoutBuilder.Data\LoadoutBuilder.Data.csproj", "{911FA79F-D205-44BA-A6C0-509CC4CB494E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadoutBuilder.Data.Models", "LoadoutBuilder.Data.Models\LoadoutBuilder.Data.Models.csproj", "{A17B6A51-7547-4B42-8378-A861339AA540}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadoutBuilder.Data.Models", "LoadoutBuilder.Data.Models\LoadoutBuilder.Data.Models.csproj", "{A17B6A51-7547-4B42-8378-A861339AA540}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadoutBuilder.Common", "LoadoutBuilder.Common\LoadoutBuilder.Common.csproj", "{6E19DBBA-39AD-4490-A231-90B9E615F798}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadoutBuilder.Common", "LoadoutBuilder.Common\LoadoutBuilder.Common.csproj", "{6E19DBBA-39AD-4490-A231-90B9E615F798}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadoutBuilder.Infrastructure", "LoadoutBuilder.Infrastructure\LoadoutBuilder.Infrastructure.csproj", "{E3F65009-52C9-4A14-B905-5B4F60BB968F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadoutBuilder.Infrastructure", "LoadoutBuilder.Infrastructure\LoadoutBuilder.Infrastructure.csproj", "{E3F65009-52C9-4A14-B905-5B4F60BB968F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadoutBuilder.ViewModels", "LoadoutBuilder.ViewModels\LoadoutBuilder.ViewModels.csproj", "{96C00495-66E6-499C-9F5F-3C692FEEA644}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadoutBuilder.ViewModels", "LoadoutBuilder.ViewModels\LoadoutBuilder.ViewModels.csproj", "{96C00495-66E6-499C-9F5F-3C692FEEA644}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{FA4CDF9D-810A-4F43-94BF-14F3AB1DCDC3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{603C6895-FCAB-4005-B01C-701CA99EEBA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadoutBuilder.Services", "LoadoutBuilder.Services\LoadoutBuilder.Services.csproj", "{83E8412B-44D3-4BB7-B00C-F7A7A1F12B7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{96C00495-66E6-499C-9F5F-3C692FEEA644}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96C00495-66E6-499C-9F5F-3C692FEEA644}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96C00495-66E6-499C-9F5F-3C692FEEA644}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83E8412B-44D3-4BB7-B00C-F7A7A1F12B7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83E8412B-44D3-4BB7-B00C-F7A7A1F12B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83E8412B-44D3-4BB7-B00C-F7A7A1F12B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83E8412B-44D3-4BB7-B00C-F7A7A1F12B7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
