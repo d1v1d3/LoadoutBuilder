@@ -30,5 +30,10 @@ namespace LoadoutBuilder.Common
             public const string TypeRequiredMessage = "Sight type is required.";
             public const string TypeLengthMessage = "Type must be between 2 and 30 characters.";
         }
+        public static class Loadout
+        {
+            public const string NameRequiredMessage = "Loadout name is required.";
+            public const string NameLengthMessage = "Name must be between 1 and 40 characters.";
+        }
     }
 }

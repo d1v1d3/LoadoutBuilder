@@ -32,5 +32,10 @@ namespace LoadoutBuilder.Common
             public const int TypeMinLength = 2;
             public const int TypeMaxLength = 30;
         }
+        public static class Loadout
+        {
+            public const int NameMinLength = 1;
+            public const int NameMaxLength = 40;
+        }
     }
 }
