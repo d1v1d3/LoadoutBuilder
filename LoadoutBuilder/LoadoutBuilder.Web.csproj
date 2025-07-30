@@ -23,6 +23,7 @@
     <ProjectReference Include="..\LoadoutBuilder.Common\LoadoutBuilder.Common.csproj" />
     <ProjectReference Include="..\LoadoutBuilder.Data\LoadoutBuilder.Data.csproj" />
     <ProjectReference Include="..\LoadoutBuilder.Infrastructure\LoadoutBuilder.Infrastructure.csproj" />
+    <ProjectReference Include="..\LoadoutBuilder.Services\LoadoutBuilder.Services.csproj" />
     <ProjectReference Include="..\LoadoutBuilder.ViewModels\LoadoutBuilder.ViewModels.csproj" />
   </ItemGroup>
 

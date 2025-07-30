@@ -1,7 +1,11 @@
 using LoadoutBuilder.Data;
 using LoadoutBuilder.Data.Models;
+using LoadoutBuilder.Infrastructure.Contracts;
+using LoadoutBuilder.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using LoadoutBuilder.Services;
+using LoadoutBuilder.Services.Contracts;
 
 namespace LoadoutBuilder.Web
 {
@@ -39,6 +43,9 @@ namespace LoadoutBuilder.Web
                 options.SignIn.RequireConfirmedPhoneNumber = false;
             })
                 .AddEntityFrameworkStores<AppDbContext>();
+
+            builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            builder.Services.AddScoped(typeof(ILoadoutService), typeof(LoadoutService));
 
             var app = builder.Build();
 

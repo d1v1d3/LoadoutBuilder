@@ -40,6 +40,11 @@ namespace LoadoutBuilder.Infrastructure
             return await _dbSet.ToListAsync();
         }
 
+        public IQueryable<T> GetAllAttached()
+        {
+            return _dbSet.AsQueryable();
+        }
+
         public async Task<T> GetByIdAsync(int id)
         {
             return await _dbSet.FindAsync(id);
