@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="15.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.11" />
@@ -23,6 +24,8 @@
     <ProjectReference Include="..\LoadoutBuilder.Common\LoadoutBuilder.Common.csproj" />
     <ProjectReference Include="..\LoadoutBuilder.Data\LoadoutBuilder.Data.csproj" />
     <ProjectReference Include="..\LoadoutBuilder.Infrastructure\LoadoutBuilder.Infrastructure.csproj" />
+    <ProjectReference Include="..\LoadoutBuilder.Mapping.Contracts\LoadoutBuilder.Mapping.Contracts.csproj" />
+    <ProjectReference Include="..\LoadoutBuilder.Mapping\LoadoutBuilder.Mapping.csproj" />
     <ProjectReference Include="..\LoadoutBuilder.Services\LoadoutBuilder.Services.csproj" />
     <ProjectReference Include="..\LoadoutBuilder.ViewModels\LoadoutBuilder.ViewModels.csproj" />
   </ItemGroup>

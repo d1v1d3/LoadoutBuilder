@@ -1,11 +1,15 @@
+using AutoMapper;
 using LoadoutBuilder.Data;
 using LoadoutBuilder.Data.Models;
-using LoadoutBuilder.Infrastructure.Contracts;
 using LoadoutBuilder.Infrastructure;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using LoadoutBuilder.Infrastructure.Contracts;
+using LoadoutBuilder.Mapping.Mappings;
+using LoadoutBuilder.Mapping;
 using LoadoutBuilder.Services;
 using LoadoutBuilder.Services.Contracts;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using LoadoutBuilder.Mapping.Contracts;
 
 namespace LoadoutBuilder.Web
 {
@@ -44,8 +48,18 @@ namespace LoadoutBuilder.Web
             })
                 .AddEntityFrameworkStores<AppDbContext>();
 
+            ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
+            {
+            });
+            var configExpression = new MapperConfigurationExpression();
+            configExpression.AddProfile<LoadoutProfile>();
+            var mapperConfig = new MapperConfiguration(configExpression,loggerFactory);
+            var mapper = mapperConfig.CreateMapper();
+
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             builder.Services.AddScoped(typeof(ILoadoutService), typeof(LoadoutService));
+            builder.Services.AddSingleton<IMapper>(mapper);
+            builder.Services.AddScoped<ICustomMapper, AutoMapperAdapter>();
 
             var app = builder.Build();
 

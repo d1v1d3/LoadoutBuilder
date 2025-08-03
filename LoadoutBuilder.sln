@@ -21,6 +21,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{603C6895-FCA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadoutBuilder.Services", "LoadoutBuilder.Services\LoadoutBuilder.Services.csproj", "{83E8412B-44D3-4BB7-B00C-F7A7A1F12B7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadoutBuilder.Mapping", "LoadoutBuilder.Mapping\LoadoutBuilder.Mapping.csproj", "{6207219A-E9F0-486E-AE91-953BEF75D296}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadoutBuilder.Mapping.Contracts", "LoadoutBuilder.Mapping.Contracts\LoadoutBuilder.Mapping.Contracts.csproj", "{7095BA2A-8B51-4641-AD2D-0CEB86E18023}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +59,14 @@ Global
 		{83E8412B-44D3-4BB7-B00C-F7A7A1F12B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83E8412B-44D3-4BB7-B00C-F7A7A1F12B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83E8412B-44D3-4BB7-B00C-F7A7A1F12B7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6207219A-E9F0-486E-AE91-953BEF75D296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6207219A-E9F0-486E-AE91-953BEF75D296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6207219A-E9F0-486E-AE91-953BEF75D296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6207219A-E9F0-486E-AE91-953BEF75D296}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7095BA2A-8B51-4641-AD2D-0CEB86E18023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7095BA2A-8B51-4641-AD2D-0CEB86E18023}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7095BA2A-8B51-4641-AD2D-0CEB86E18023}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7095BA2A-8B51-4641-AD2D-0CEB86E18023}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
