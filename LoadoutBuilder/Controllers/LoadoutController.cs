@@ -1,7 +1,8 @@
 ﻿using LoadoutBuilder.Data;
-using Microsoft.AspNetCore.Mvc;
 using LoadoutBuilder.Services.Contracts;
 using LoadoutBuilder.ViewModels.Loadout;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace LoadoutBuilder.Web.Controllers
 {
@@ -14,7 +15,8 @@ namespace LoadoutBuilder.Web.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var loadouts = await _service.GetLoadoutsByUserOrderedByIdAsync();
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var loadouts = await _service.GetLoadoutsByUserIdAsync(userId);
             return View(loadouts);
         }
 
@@ -27,6 +29,8 @@ namespace LoadoutBuilder.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                model.UserId = userId;
                 await _service.AddLoadoutAsync(model);
                 return RedirectToAction(nameof(Index));
             }

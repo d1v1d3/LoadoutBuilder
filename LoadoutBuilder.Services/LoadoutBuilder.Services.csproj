@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\LoadoutBuilder.Data.Models\LoadoutBuilder.Data.Models.csproj" />
     <ProjectReference Include="..\LoadoutBuilder.Infrastructure\LoadoutBuilder.Infrastructure.csproj" />
+    <ProjectReference Include="..\LoadoutBuilder.Mapping.Contracts\LoadoutBuilder.Mapping.Contracts.csproj" />
     <ProjectReference Include="..\LoadoutBuilder.ViewModels\LoadoutBuilder.ViewModels.csproj" />
   </ItemGroup>
 

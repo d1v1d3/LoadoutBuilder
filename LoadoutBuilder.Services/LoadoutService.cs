@@ -8,29 +8,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using LoadoutBuilder.Mapping.Contracts;
 
 namespace LoadoutBuilder.Services
 {
     public class LoadoutService : ILoadoutService
     {
         private readonly IRepository<Loadout> _repository;
-        public LoadoutService(IRepository<Loadout> repository)
+        private readonly ICustomMapper _mapper;
+        public LoadoutService(IRepository<Loadout> repository, ICustomMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         public async Task AddLoadoutAsync(LoadoutFormModel model)
         {
-            var loadout = new Loadout{ Name = model.Name };
+            Loadout loadout = _mapper.Map<LoadoutFormModel, Loadout>(model);
             await _repository.AddAsync(loadout);
         }
 
-        public async Task<IEnumerable<LoadoutIndexViewModel>> GetLoadoutsByUserOrderedByIdAsync()
+        public async Task<IEnumerable<LoadoutIndexViewModel>> GetLoadoutsByUserIdAsync(string userId)
         {
-            IEnumerable<LoadoutIndexViewModel> loadouts = await _repository
+            IEnumerable<LoadoutIndexViewModel> loadouts = _mapper.Map<IEnumerable<Loadout>, List<LoadoutIndexViewModel>>(await _repository
                 .GetAllAttached()
-                .Select(l => new LoadoutIndexViewModel { Id = l.Id, Name = l.Name, WeaponSlotCount = l.WeaponSlots.Count })
-                .ToListAsync();
+                .Where(l=>l.UserId== userId)
+                .ToListAsync());
             return loadouts;
         }
     }

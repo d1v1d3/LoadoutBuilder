@@ -13,5 +13,6 @@ namespace LoadoutBuilder.ViewModels.Loadout
         [Required(ErrorMessage = ValidationMessages.Loadout.NameRequiredMessage)]
         [StringLength(ValidationConstants.Loadout.NameMaxLength, MinimumLength = ValidationConstants.Loadout.NameMinLength, ErrorMessage = ValidationMessages.Loadout.NameLengthMessage)]
         public string Name { get; set; }
+        public string? UserId { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace LoadoutBuilder.Services.Contracts
 {
     public interface ILoadoutService
     {
-        Task<IEnumerable<LoadoutIndexViewModel>> GetLoadoutsByUserOrderedByIdAsync();
+        Task<IEnumerable<LoadoutIndexViewModel>> GetLoadoutsByUserIdAsync(string userId);
         Task AddLoadoutAsync(LoadoutFormModel model);
 
     }
