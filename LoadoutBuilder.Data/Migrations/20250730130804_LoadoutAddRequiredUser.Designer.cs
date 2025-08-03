@@ -4,6 +4,7 @@ using LoadoutBuilder.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LoadoutBuilder.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250730130804_LoadoutAddRequiredUser")]
+    partial class LoadoutAddRequiredUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,7 +109,7 @@ namespace LoadoutBuilder.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Camos", (string)null);
+                    b.ToTable("Camos");
                 });
 
             modelBuilder.Entity("LoadoutBuilder.Data.Models.Category", b =>
@@ -124,7 +127,7 @@ namespace LoadoutBuilder.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("LoadoutBuilder.Data.Models.Loadout", b =>
@@ -154,7 +157,7 @@ namespace LoadoutBuilder.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Loadouts", (string)null);
+                    b.ToTable("Loadouts");
                 });
 
             modelBuilder.Entity("LoadoutBuilder.Data.Models.Sight", b =>
@@ -175,7 +178,7 @@ namespace LoadoutBuilder.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sight", (string)null);
+                    b.ToTable("Sight");
                 });
 
             modelBuilder.Entity("LoadoutBuilder.Data.Models.SightCategory", b =>
@@ -190,7 +193,7 @@ namespace LoadoutBuilder.Data.Migrations
 
                     b.HasIndex("CotegoryId");
 
-                    b.ToTable("SightCategory", (string)null);
+                    b.ToTable("SightCategory");
                 });
 
             modelBuilder.Entity("LoadoutBuilder.Data.Models.Weapon", b =>
@@ -217,7 +220,7 @@ namespace LoadoutBuilder.Data.Migrations
 
                     b.HasIndex("CotegoryId");
 
-                    b.ToTable("Weapons", (string)null);
+                    b.ToTable("Weapons");
                 });
 
             modelBuilder.Entity("LoadoutBuilder.Data.Models.WeaponSlot", b =>
@@ -247,7 +250,7 @@ namespace LoadoutBuilder.Data.Migrations
 
                     b.HasIndex("WeaponId");
 
-                    b.ToTable("WeaponSlots", (string)null);
+                    b.ToTable("WeaponSlots");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

@@ -23,6 +23,6 @@ namespace LoadoutBuilder.Data.Models
         public int SightId { get; set; }
         [ForeignKey(nameof(SightId))]
         public Sight Sight { get; set; }
-        
+
     }
 }
