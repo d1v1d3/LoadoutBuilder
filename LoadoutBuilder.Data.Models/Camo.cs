@@ -17,6 +17,7 @@ namespace LoadoutBuilder.Data.Models
         public string Name { get; set; }
         [StringLength(ValidationConstants.Camo.DescriptionMaxLength)]
         public string? Description { get; set; }
+        public bool IsDeleted { get; set; } = false;
         public virtual ICollection<WeaponSlot> WeaponSlots { get; set; } = new HashSet<WeaponSlot>();
     }
 }

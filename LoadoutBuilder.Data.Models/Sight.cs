@@ -15,6 +15,7 @@ namespace LoadoutBuilder.Data.Models
         [StringLength(ValidationConstants.Sight.TypeMaxLength)]
         public string Type { get; set; }
         public Range Range { get; set; }
+        public bool IsDeleted { get; set; } = false;
         public ICollection<SightCategory> SightCategories { get; set; }
         public virtual ICollection<WeaponSlot> WeaponSlots { get; set; } = new HashSet<WeaponSlot>();
     }

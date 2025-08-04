@@ -17,6 +17,7 @@ namespace LoadoutBuilder.Data.Models
         public string Name { get; set; }
         public DateTime CreatedOn { get; set; } = DateTime.Now; 
         public DateTime ModifiedOn { get; set; } = DateTime.Now;
+        public bool IsDeleted { get; set; } = false;
         public virtual ICollection<WeaponSlot> WeaponSlots { get; set; } = new HashSet<WeaponSlot>();
         public string UserId { get; set; }
         [Required]
