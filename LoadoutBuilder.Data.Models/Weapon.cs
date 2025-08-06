@@ -1,15 +1,16 @@
-﻿using System;
+﻿using LoadoutBuilder.Common;
+using LoadoutBuilder.Data.Models.Contracts;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LoadoutBuilder.Common;
 
 namespace LoadoutBuilder.Data.Models
 {
-    public class Weapon
+    public class Weapon : ISoftDeletable
     {
         [Key]
         public int Id { get; set; }

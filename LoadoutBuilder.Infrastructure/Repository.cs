@@ -1,4 +1,5 @@
 ﻿using LoadoutBuilder.Data;
+using LoadoutBuilder.Data.Models.Contracts;
 using LoadoutBuilder.Infrastructure.Contracts;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -23,17 +24,6 @@ namespace LoadoutBuilder.Infrastructure
             await _dbSet.AddAsync(instance);
             await _context.SaveChangesAsync();
         }
-        public async Task DeleteAsync(T instance)
-        {
-            _dbSet.Remove(instance);
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task DeleteByIdAsync(int id)
-        {
-            var instance = await GetByIdAsync(id);
-            await DeleteAsync(instance);
-        }
 
         public async Task<IEnumerable<T>> GetAllAsync()
         {
@@ -50,16 +40,36 @@ namespace LoadoutBuilder.Infrastructure
             return await _dbSet.FindAsync(id);
         }
 
+        public async Task<bool> SoftDeleteAsync<T>(T instance) where T : class,ISoftDeletable
+        {
+            if (instance.IsDeleted == true)
+            {
+                return false;
+            }
+            instance.IsDeleted = true;
+            return await UpdateByIdAsync(instance.Id);
+        }
+
         public async Task UpdateAsync(T instance)
         {
             _dbSet.Attach(instance);
             _context.Entry(instance).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
-        public async Task UpdateByIdAsync(int id)
+        public async Task<bool> UpdateByIdAsync(int id)
         {
-            var instance = await GetByIdAsync(id);
-            await UpdateAsync(instance);
+            try
+            {
+                var instance = await GetByIdAsync(id);
+                _dbSet.Attach(instance);
+                _context.Entry(instance).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
     }

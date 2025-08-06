@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LoadoutBuilder.Common;
+using LoadoutBuilder.Data.Models.Contracts;
 
 namespace LoadoutBuilder.Data.Models
 {
-    public class Sight
+    public class Sight :ISoftDeletable
     {
         [Key]
         public int Id { get; set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoadoutBuilder.Data.Models.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,7 @@ namespace LoadoutBuilder.Infrastructure.Contracts
         IQueryable<T> GetAllAttached();
         Task AddAsync(T instance);
         Task UpdateAsync(T instance);
-        Task UpdateByIdAsync(int id);
-        Task DeleteAsync(T instance);
-        Task DeleteByIdAsync(int id);
+        Task<bool> UpdateByIdAsync(int id);
+        Task<bool> SoftDeleteAsync<T>(T instance) where T : class,ISoftDeletable;
     }
 }
