@@ -20,6 +20,7 @@ namespace LoadoutBuilder.Web.Controllers
             return View(loadouts);
         }
 
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
@@ -35,6 +36,21 @@ namespace LoadoutBuilder.Web.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(model);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Delete(int? loadoutId)
+        {
+            int id = loadoutId ?? -1;
+            if (id == -1)
+            {
+                return View("BadRequest");
+            }
+            bool isDeleted = await _service.SoftDeleteLoadoutAsync(id);
+            if (!isDeleted)
+            {
+                return View("NotFound");
+            }
+            return RedirectToAction(nameof(Index));
         }
     }
 }

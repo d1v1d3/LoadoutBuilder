@@ -11,6 +11,7 @@ namespace LoadoutBuilder.Services.Contracts
     {
         Task<IEnumerable<LoadoutIndexViewModel>> GetLoadoutsByUserIdAsync(string userId);
         Task AddLoadoutAsync(LoadoutFormModel model);
+        Task<bool> SoftDeleteLoadoutAsync(int loadoutId);
 
     }
 }

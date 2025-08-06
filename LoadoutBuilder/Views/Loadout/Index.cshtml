@@ -13,6 +13,7 @@
                 <div class="card-body">
                     <h5 class="card-title">@loadout.Name</h5>
                     <p class="card-text">@loadout.WeaponSlotCount Slots</p>
+                    <a asp-action="Delete" asp-route-loadoutId="@loadout.Id" class="btn btn-danger">Delete</a>
                 </div>
             </div>
         </div>

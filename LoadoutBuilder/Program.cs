@@ -7,9 +7,9 @@ using LoadoutBuilder.Mapping.Mappings;
 using LoadoutBuilder.Mapping;
 using LoadoutBuilder.Services;
 using LoadoutBuilder.Services.Contracts;
+using LoadoutBuilder.Mapping.Contracts;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using LoadoutBuilder.Mapping.Contracts;
 
 namespace LoadoutBuilder.Web
 {

@@ -32,9 +32,14 @@ namespace LoadoutBuilder.Services
         {
             IEnumerable<LoadoutIndexViewModel> loadouts = _mapper.Map<IEnumerable<Loadout>, List<LoadoutIndexViewModel>>(await _repository
                 .GetAllAttached()
-                .Where(l=>l.UserId== userId)
+                .Where(l=>l.UserId== userId && l.IsDeleted==false)
                 .ToListAsync());
             return loadouts;
+        }
+        public async Task<bool> SoftDeleteLoadoutAsync(int loadoutId)
+        {
+            var loadout = await _repository.GetByIdAsync(loadoutId);
+            return await _repository.SoftDeleteAsync(loadout);
         }
     }
 }
