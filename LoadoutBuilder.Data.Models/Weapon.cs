@@ -14,7 +14,6 @@ namespace LoadoutBuilder.Data.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
         [StringLength(ValidationConstants.Weapon.NameMaxLength)]
         public string Name { get; set; }
         [StringLength(ValidationConstants.Weapon.DescriptionMaxLength)]

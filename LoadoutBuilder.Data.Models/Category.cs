@@ -14,6 +14,7 @@ namespace LoadoutBuilder.Data.Models
         public int Id { get; set; }
         [StringLength(ValidationConstants.Category.NameMaxLength)]
         public string Name { get; set; }
+        public Range Range { get; set; }
         public virtual ICollection<Weapon> Weapons { get; set; }
         public virtual ICollection<SightCategory> SightCategories { get; set; }
     }

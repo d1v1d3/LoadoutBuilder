@@ -13,7 +13,6 @@ namespace LoadoutBuilder.Data.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
         [StringLength(ValidationConstants.Camo.NameMaxLength)]
         public string Name { get; set; }
         [StringLength(ValidationConstants.Camo.DescriptionMaxLength)]

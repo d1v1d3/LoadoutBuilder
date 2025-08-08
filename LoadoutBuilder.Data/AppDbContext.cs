@@ -20,7 +20,8 @@ namespace LoadoutBuilder.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<WeaponSlot>()
-                .HasKey(ws => new { ws.SlotNumber, ws.LoadoutId });
+            .HasIndex(u => new { u.LoadoutId, u.Type })
+            .IsUnique();
 
             modelBuilder.Entity<SightCategory>()
                 .HasKey(sc => new {sc.SightId, sc.CotegoryId});

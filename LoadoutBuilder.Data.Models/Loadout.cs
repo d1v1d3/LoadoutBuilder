@@ -21,7 +21,6 @@ namespace LoadoutBuilder.Data.Models
         public bool IsDeleted { get; set; } = false;
         public virtual ICollection<WeaponSlot> WeaponSlots { get; set; } = new HashSet<WeaponSlot>();
         public string UserId { get; set; }
-        [Required]
         [ForeignKey("UserId")]
         public ApplicationUser User { get; set; } = null!;
     }
